@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Ensures the entire history is checked out
+          token: ${{ secrets.GIT_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -21,5 +24,5 @@ jobs:
           pip install requests
       - name: Create Year Progress Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: python create_release.py
