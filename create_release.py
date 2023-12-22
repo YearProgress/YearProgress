@@ -38,7 +38,7 @@ if __name__ == "__main__":
     name = f"{datetime.now().strftime('%Y-%m-%d')}"
     progress_percentage = percent_of_year_passed()
     progress_bar = create_progress_bar(progress_percentage)
-    body = f"# Year Progress\n{progress_bar} {progress_percentage:.2f}%"
+    body = f"# Year Progress\n{name}\n{progress_bar} {progress_percentage:.2f}%"
 
     response = create_github_release(token, repo, tag_name, name, body)
     print(response.json())

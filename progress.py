@@ -13,8 +13,9 @@ def create_progress_bar(percentage, bar_length=40):
     return bar
 
 if __name__ == "__main__":
+    name = f"{datetime.now().strftime('%Y-%m-%d')}"
     progress_percentage = percent_of_year_passed()
     progress_bar = create_progress_bar(progress_percentage)
-    readme_content = f"# Year Progress\n{progress_bar} {progress_percentage:.2f}%"
+    readme_content = f"# Year Progress\n{name}\n{progress_bar} {progress_percentage:.2f}%"
     with open('README.md', 'w') as file:
         file.write(readme_content)
