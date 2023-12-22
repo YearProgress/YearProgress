@@ -28,7 +28,7 @@ if __name__ == "__main__":
     progress = percent_of_year_passed()
     token = os.getenv('GIT_TOKEN')
     repo = "YearProgress/YearProgress"
-    tag_name = f"progress-{datetime.now().strftime('%Y%m%d')}"
+    tag_name = f"Progress-{datetime.now().strftime('%Y%m%d')}"
     name = f"{datetime.now().strftime('%Y-%m-%d')}"
     body = f"Year Progress: {progress:.2f}%"
 
