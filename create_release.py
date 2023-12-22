@@ -26,8 +26,8 @@ def create_github_release(token, repo, tag_name, name, body):
 
 if __name__ == "__main__":
     progress = percent_of_year_passed()
-    token = os.getenv('GITHUB_TOKEN')
-    repo = "your_username/your_repo"  # Replace with your GitHub username and repository
+    token = os.getenv('GIT_TOKEN')
+    repo = "YearProgress/YearProgress"
     tag_name = f"progress-{datetime.now().strftime('%Y%m%d')}"
     name = f"Year Progress Update - {datetime.now().strftime('%Y-%m-%d')}"
     body = f"Year Progress: {progress:.2f}%"
