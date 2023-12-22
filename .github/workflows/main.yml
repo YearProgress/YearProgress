@@ -2,7 +2,7 @@ name: Daily Year Progress Update
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs at midnight every day
+    - cron: '0 8 * * *'  # Runs at 8 every day
 
 jobs:
   update-progress:

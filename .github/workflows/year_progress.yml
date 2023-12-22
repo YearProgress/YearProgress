@@ -1,0 +1,25 @@
+name: Year Progress Update
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs at 8 UTC every day
+  push:
+    branches: [ main ]  # Or your default branch
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Use your required Python version
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      - name: Create Year Progress Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        run: python create_release.py
