@@ -2,7 +2,7 @@ name: Year Progress Update
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs at 8 UTC every day
+    - cron: '0 13 * * *'  # Runs at 8 UTC every day
   push:
     branches: [ main ]  # Or your default branch
 
