@@ -29,7 +29,7 @@ if __name__ == "__main__":
     token = os.getenv('GIT_TOKEN')
     repo = "YearProgress/YearProgress"
     tag_name = f"progress-{datetime.now().strftime('%Y%m%d')}"
-    name = f"Year Progress Update - {datetime.now().strftime('%Y-%m-%d')}"
+    name = f"{datetime.now().strftime('%Y-%m-%d')}"
     body = f"Year Progress: {progress:.2f}%"
 
     response = create_github_release(token, repo, tag_name, name, body)
