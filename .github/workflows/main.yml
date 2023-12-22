@@ -1,0 +1,18 @@
+name: Daily Year Progress Update
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs at midnight every day
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update Year Progress
+        run: |
+          python progress.py > README.md
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update Year Progress"
+          git push
